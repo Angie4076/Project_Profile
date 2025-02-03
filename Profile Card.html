@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Card</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 200vh;
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+        }
+        .card {
+            background: rgb(91, 86, 86);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 300px;
+        }
+        .card img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+        }
+        .card h2, .card h4, .card p {
+            margin: 10px 0;
+        }
+        .social-links a {
+            margin: 0 10px;
+            text-decoration: none;
+            color: #e6edf1;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <img src="Pictures/AN1.jpg" alt="Profile Picture" data-testid="profilePicture">
+        <h2 data-testid="fullName">ANGELA TARE</h2>
+        <h4 data-testid="jobTitle">Frontend Developer</h4>
+        <p data-testid="shortBio">Passionate about building interactive and user-friendly web applications.</p>
+        <p data-testid="currentLocation">NAIROBI, KENYA</p>
+        <p data-testid="emailAddress">tareangela8@gmail.com</p>
+        <div class="social-links" data-testid="socialLinks">
+            <a href="#">https://www.linkedin.com/in/angela-tare-201565262/</a>
+            <a href="#">https://github.com/Angie4076</a>
+        </div>
+        <p data-testid="currentTimeUTC" id="utc-time"></p>
+    </div>
+    <script>
+        function updateTime() {
+            document.getElementById('utc-time').textContent = new Date().toUTCString();
+        }
+        updateTime();
+        setInterval(updateTime, 60000);
+    </script>
+</body>
+</html>
